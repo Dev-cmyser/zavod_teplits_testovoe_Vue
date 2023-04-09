@@ -1,30 +1,27 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div id="app">
+    <Home/>
+  </div>
 </template>
 
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+// @import '~materialize-css/dist/css/materialize.min.css';
+@import 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css';
 
-nav {
-  padding: 30px;
+@import 'assets/style.css';
+</style>
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+import Home from '@/views/HomeView'
+import  'vue-yandex-maps';
+export default {
+  methods: {
+   
+  },
+  components: {
+    Home
   }
 }
-</style>
+</script>
