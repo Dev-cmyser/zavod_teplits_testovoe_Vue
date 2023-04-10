@@ -52,7 +52,7 @@ export default {
       coords: [59.204057, 39.840256],
       citys: [],
       choisen_city: "Москва",
-      phone: '8-985-344-76-46'
+      phone: "8-985-344-76-46",
     };
   },
 
@@ -64,17 +64,19 @@ export default {
 
   methods: {
     getFeedbacks() {
-      fetch("http://localhost:8000/feedback/")
+      fetch("http://91.206.92.155:8001/feedback/")
         .then((response) => response.json())
         .then((json) => {
           setTimeout(() => {
+            console.log("223213213213");
+
             this.feedbacks = json.results;
             this.loading = false;
           }, 200);
         });
     },
     getGoods() {
-      fetch("http://localhost:8000/products/")
+      fetch("http://91.206.92.155:8001/products/")
         .then((response) => response.json())
         .then((json) => {
           setTimeout(() => {
@@ -84,7 +86,7 @@ export default {
         });
     },
     getCitys() {
-      fetch("http://localhost:8000/city/")
+      fetch("http://91.206.92.155:8001/city/")
         .then((response) => response.json())
         .then((json) => {
           this.citys = json.results;
@@ -107,7 +109,6 @@ export default {
       this.coords = newCoords;
     },
     onUpdateCity(name) {
-      console.log('223213213213')
       if (name === "Вологда") {
         this.phone = "+8-921-333-12-12";
       }
@@ -117,9 +118,8 @@ export default {
       this.choisen_city = name;
       if (name === "Санкт-Петербург") {
         this.phone = "+84943245648";
-        this.choisen_city = "Санкт-Петербу"
+        this.choisen_city = "Санкт-Петербу";
       }
-      
     },
   },
   components: {
